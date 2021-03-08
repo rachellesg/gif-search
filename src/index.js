@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import SearchBar from "./components/searchBar";
 import axios from "axios";
+import "./styled.css";
 
 function App() {
   const [searchLoad, setSearchLoad] = useState([]);
@@ -23,16 +23,18 @@ function App() {
 
   return (
     <>
-      Hello <br />
-      <input value={payLoad} onChange={(e) => setPayLoad(e.target.value)} />
-      <span onClick={fetchData}>Click Here To Fetch</span>
-      {searchLoad && searchLoad.map((item) => (
-        <div>
-          <img src={item.images.downsized.url} />
-        </div>
-      ))}
-      {/* {payLoad} {searchLoad.data} */}
-      {/* { searchLoad.data && searchLoad.data.map(item => <>{item.image.downsized.url}</>)} */}
+      <div className="header">
+        <h1>Simple GIPHY search</h1>
+      </div>
+      <div className="container">
+        <input value={payLoad} onChange={(e) => setPayLoad(e.target.value)} />
+        <span onClick={fetchData}>Click Here To Fetch</span>
+        {searchLoad.map((item) => (
+          <div>
+            <img src={item.images.downsized.url} />
+          </div>
+        ))}
+      </div>
     </>
   );
 }
