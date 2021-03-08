@@ -18,7 +18,7 @@ function App() {
     console.log("RESPONSE");
     console.log(response.data);
     console.log("SEARCH LOAD");
-    console.log(searchLoad.data);
+    console.log(searchLoad);
   };
 
   return (
@@ -28,7 +28,7 @@ function App() {
       <span onClick={fetchData}>Click Here To Fetch</span>
       {searchLoad && searchLoad.map((item) => (
         <div>
-          <img src={item.url} />
+          <img src={item.images.downsized.url} />
         </div>
       ))}
       {/* {payLoad} {searchLoad.data} */}
