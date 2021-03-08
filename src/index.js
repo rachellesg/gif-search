@@ -4,7 +4,7 @@ import SearchBar from "./components/searchBar";
 import axios from "axios";
 
 function App() {
-  const [searchLoad, setSearchLoad] = useState([]);
+  const [searchLoad, setSearchLoad] = useState(undefined);
   const [payLoad, setPayLoad] = useState("");
 
   const apiUrl = `http://api.giphy.com/v1/gifs/search`;
@@ -26,8 +26,13 @@ function App() {
       Hello <br />
       <input value={payLoad} onChange={(e) => setPayLoad(e.target.value)} />
       <span onClick={fetchData}>Click Here To Fetch</span>
-      {payLoad}
-      {/* { searchLoad && searchLoad.map(item => <>{item.image.downsized.url}</>)} */}
+      {searchLoad.map((item) => (
+        <div>
+          <img src={item.url} />
+        </div>
+      ))}
+      {/* {payLoad} {searchLoad.data} */}
+      {/* { searchLoad.data && searchLoad.data.map(item => <>{item.image.downsized.url}</>)} */}
     </>
   );
 }
