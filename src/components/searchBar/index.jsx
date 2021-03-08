@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 function SearchBar(e) {
   const [payload, setPayload] = useState('');
-
+    console.log(payload)
   return (
     <>
-      <input onChange={(e) => this.onInputChange(e.target.value)} />
+      <input value={payload} onChange={(e) => setPayload(e.target.value)} />
     </>
   );
 }
