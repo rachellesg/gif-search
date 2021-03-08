@@ -8,7 +8,10 @@ function App() {
   const [payLoad, setPayLoad] = useState("");
 
   const apiUrl = `http://api.giphy.com/v1/gifs/search`;
-  const apiKey = "lhi5oCffHG3ybpyeuZUmvlVqxXS5nWja";
+  // const apiKey = "lhi5oCffHG3ybpyeuZUmvlVqxXS5nWja";
+  const apiKey = process.env.REACT_APP_GIPHY_KEY
+
+  console.log(process.env.REACT_APP_GIPHY_KEY)
 
   const fetchData = async () => {
     const response = await axios.get(apiUrl, {

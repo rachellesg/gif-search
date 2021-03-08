@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Beta 1.0 
 - Search input, GIF results will show on click
 - Styling of page 
+- Hash API key
 
 ### Beta 2.0 
 - Append search params to URL
