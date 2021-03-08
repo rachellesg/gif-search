@@ -4,7 +4,7 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 768px;
+    width: 800px;
     padding: 20px;
 }
 
@@ -19,4 +19,29 @@ body {
 
 .header h1 {
     font-size: 65px;
+}
+
+.images {
+    flex: 1 3 33%;
+}
+
+.images img {
+    width: 33%;
+    align-items: flex-start;
+    padding: 0 2px 0 0;
+}
+
+.images img:nth-child(3) {
+    padding: 0;
+}
+
+.search {
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    background: pink;
+    padding: 5px;
+    text-align: center;
 }

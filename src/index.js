@@ -27,13 +27,14 @@ function App() {
         <h1>Simple GIPHY search</h1>
       </div>
       <div className="container">
-        <input value={payLoad} onChange={(e) => setPayLoad(e.target.value)} />
-        <span onClick={fetchData}>Click Here To Fetch</span>
-        {searchLoad.map((item) => (
-          <div>
+        <input value={payLoad} className="search" onChange={(e) => setPayLoad(e.target.value)} />
+        <span className="button" onClick={fetchData}>Click Here To Fetch</span>
+
+        <div className="images">
+          {searchLoad.map((item) => (
             <img src={item.images.downsized.url} />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
