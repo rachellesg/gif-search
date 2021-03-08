@@ -4,7 +4,7 @@ import SearchBar from "./components/searchBar";
 import axios from "axios";
 
 function App() {
-  const [searchLoad, setSearchLoad] = useState(undefined);
+  const [searchLoad, setSearchLoad] = useState([]);
   const [payLoad, setPayLoad] = useState("");
 
   const apiUrl = `http://api.giphy.com/v1/gifs/search`;
@@ -14,7 +14,7 @@ function App() {
     const response = await axios.get(apiUrl, {
       params: { q: payLoad, api_key: apiKey },
     });
-    setSearchLoad(response.data);
+    setSearchLoad(response.data.data);
     console.log("RESPONSE");
     console.log(response.data);
     console.log("SEARCH LOAD");
@@ -26,7 +26,7 @@ function App() {
       Hello <br />
       <input value={payLoad} onChange={(e) => setPayLoad(e.target.value)} />
       <span onClick={fetchData}>Click Here To Fetch</span>
-      {searchLoad.map((item) => (
+      {searchLoad && searchLoad.map((item) => (
         <div>
           <img src={item.url} />
         </div>
