@@ -22,6 +22,7 @@ html {
 
 .header {
   height: 30vh;
+  flex-direction: column;
   /* background: #fefefe; */
   background-color: #ffbd77;
   background-image: linear-gradient(
@@ -40,6 +41,7 @@ html {
 
 .header h1 {
   font-size: 65px;
+  margin-bottom: 20px;
 }
 
 .images-wrapper {

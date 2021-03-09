@@ -4,11 +4,13 @@ function SearchBar() {
   const [payLoad, setPayLoad] = useState("");
 
   return (
-    <input
-      value={payLoad}
-      className="search"
-      onChange={(e) => setPayLoad(e.target.value)}
-    />
+    <div className="search--wrapper">
+      <input
+        value={payLoad}
+        className="search"
+        onChange={(e) => setPayLoad(e.target.value)}
+      />
+    </div>
   );
 }
 

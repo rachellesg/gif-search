@@ -9,6 +9,7 @@ function App() {
   const [searchResults, setsearchResults] = useState([]);
 
   useEffect(() => {
+    console.log(payLoad)
     const apiUrl = `http://api.giphy.com/v1/gifs/search`;
     const apiKey = "lhi5oCffHG3ybpyeuZUmvlVqxXS5nWja";
     const fetchData = async () => {
@@ -26,9 +27,10 @@ function App() {
     <>
       <div className="header">
         <h1>Simple GIPHY search</h1>
+        Key in your search term and be presented with GIFs!
       </div>
       <div className="container">
-        <SearchBar />
+        <SearchBar payLoad={payLoad} />
         <div className="search--wrapper">
           <input
             value={payLoad}
