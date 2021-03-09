@@ -5,7 +5,8 @@ body {
 .container {
     margin: 0 auto;
     width: 800px;
-    padding: 20px;
+    padding-top: 20px;
+    box-sizing: border-box;
 }
 
 .header {
@@ -36,12 +37,25 @@ body {
 }
 
 .search {
+    max-width: 100%;
     width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    height: 35px;
+    outline: none;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.search:hover, .search::selection {
+    outline: none;
 }
 
 .button {
-    width: 100%;
+    max-width: 100%;
+    display: block;
     background: pink;
     padding: 5px;
+    cursor: pointer;
     text-align: center;
 }
