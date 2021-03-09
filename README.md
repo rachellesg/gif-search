@@ -4,9 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Development 
 
-### Beta 1.0 
+### Beta 1.0 (Last Updated 9 Mar 21)
 - Search input, GIF results will show on click
 - Styling of page 
+- Split into components
 
 ### Beta 2.0 
 - Append search params to URL
