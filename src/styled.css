@@ -1,17 +1,37 @@
-body {
+body,
+html {
   font-family: Lora, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
   margin: 0 auto;
-  width: 800px;
+  width: 1024px;
+  max-width: 100%;
   padding-top: 20px;
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 20px;
+  }
+}
+
 .header {
   height: 30vh;
-  background: #eeeeee;
+  /* background: #fefefe; */
+  background-color: #ffbd77;
+  background-image: linear-gradient(
+    319deg,
+    #acfcd9 0%,
+    #f0f4a4 37%,
+    #ffbd77 100%
+  );
+  /* background: url("https://media0.giphy.com/media/sIIhZliB2McAo/giphy.gif?cid=f64872bcnytzsklx08l5fmou7pu2brqle6uz3335awgq34qc&rid=giphy.gif") no-repeat right center; */
+  background-size: cover;
   display: flex;
   vertical-align: middle;
   justify-content: center;
@@ -49,15 +69,22 @@ body {
 
 .search--wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  box-sizing: border-box;
 }
 
 .search {
   outline: none;
   font-size: 20px;
+  font-family: Lora, sans-serif;
   padding: 5px 10px;
-  width: 60%;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #759c7c;
 }
 
 .search:hover,
@@ -66,13 +93,22 @@ body {
 }
 
 .button {
-  background: pink;
+  background-color: #c1f9c9;
+  padding: 5px;
+  /* color: #fff; */
+  box-shadow: 1px 5px #759c7c;
   cursor: pointer;
   display: flex;
-  width: 40%;
-  margin-left: 10px;
-  border-radius: 15px;
+  width: 100%;
+  max-width: 250px;
+  margin-left: 15px;
+  border-radius: 5px;
   align-items: center;
   vertical-align: middle;
   justify-content: center;
+}
+
+.button:hover {
+  transform: translateY(3px);
+  box-shadow: 3px 3px #759c7c;
 }

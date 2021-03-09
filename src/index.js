@@ -19,7 +19,7 @@ function App() {
     });
     setsearchResults(response.data.data);
     // console.log("RESPONSE");
-    // console.log(response.data);
+    console.log(response.data);
     // console.log("SEARCH LOAD");
     // console.log(searchResults);
   };
