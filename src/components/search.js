@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 
-function SearchBar() {
+function SearchBar({ setSearchData }) {
   const [payLoad, setPayLoad] = useState("");
 
+  const doSubmit = (e) => {
+    e.preventDefault();
+    setSearchData(payLoad);
+  };
   return (
-    <div className="search--wrapper">
-      <input
-        value={payLoad}
-        className="search"
-        onChange={(e) => setPayLoad(e.target.value)}
-      />
-    </div>
+    <form onSubmit={doSubmit}>
+      <div className="search--wrapper">
+        <input
+          value={payLoad}
+          className="search"
+          onChange={(e) => setPayLoad(e.target.value)}
+        />
+      </div>
+    </form>
   );
 }
 

@@ -5,23 +5,22 @@ import SearchBar from "./components/search";
 import "./styled.css";
 
 function App() {
-  const [payLoad, setPayLoad] = useState("");
+  const [searchData, setSearchData] = useState("");
   const [searchResults, setsearchResults] = useState([]);
 
   useEffect(() => {
-    console.log(payLoad)
     const apiUrl = `http://api.giphy.com/v1/gifs/search`;
     const apiKey = "lhi5oCffHG3ybpyeuZUmvlVqxXS5nWja";
     const fetchData = async () => {
       const response = await axios.get(apiUrl, {
-        params: { q: payLoad, api_key: apiKey },
+        params: { q: searchData, api_key: apiKey },
       });
       setsearchResults(response.data.data);
     };
-    if (payLoad) {
+    if (searchData) {
       fetchData();
     }
-  }, [payLoad]);
+  }, [searchData]);
 
   return (
     <>
@@ -30,14 +29,7 @@ function App() {
         Key in your search term and be presented with GIFs!
       </div>
       <div className="container">
-        <SearchBar payLoad={payLoad} />
-        <div className="search--wrapper">
-          <input
-            value={payLoad}
-            className="search"
-            onChange={(e) => setPayLoad(e.target.value)}
-          />
-        </div>
+        <SearchBar setSearchData={setSearchData} />
 
         <div className="images-wrapper">
           {searchResults &&
