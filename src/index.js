@@ -41,13 +41,13 @@ function App() {
           </div>
         </div>
 
-        <div className="images">
+        <div className="images-wrapper">
           {payLoad === ""
             ? ""
             : searchResults &&
               searchResults.map((item, index) => (
-                <div className="image">
-                  <img key={index} src={item.images.downsized.url} />
+                <div key={index} className="image">
+                  <img alt={item.title} src={item.images.downsized.url} />
                 </div>
               ))}
         </div>

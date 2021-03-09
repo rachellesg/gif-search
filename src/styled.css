@@ -42,7 +42,7 @@ html {
   font-size: 65px;
 }
 
-.images {
+.images-wrapper {
   margin-top: 25px;
   flex-wrap: wrap;
   display: flex;
@@ -56,14 +56,14 @@ html {
   margin: 0 10px 10px 0;
 }
 
-.images img {
+.images-wrapper img {
   max-height: 100%;
   min-width: 100%;
   object-fit: cover;
   vertical-align: bottom;
 }
 
-.images img:nth-child(3) {
+.images-wrapper img:nth-child(3) {
   padding: 0;
 }
 
