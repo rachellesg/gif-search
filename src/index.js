@@ -12,7 +12,7 @@ function App() {
 
   const fetchData = async () => {
     if (payLoad === "") {
-      alert("You have to enter a search term!")
+      alert("You have to enter a search term!");
     }
     const response = await axios.get(apiUrl, {
       params: { q: payLoad, api_key: apiKey },
@@ -43,10 +43,12 @@ function App() {
 
         <div className="images">
           {payLoad === ""
-            ? "Enter your search query!"
+            ? ""
             : searchResults &&
               searchResults.map((item, index) => (
-                <img key={index} src={item.images.downsized.url} />
+                <div className="image">
+                  <img key={index} src={item.images.downsized.url} />
+                </div>
               ))}
         </div>
       </div>
