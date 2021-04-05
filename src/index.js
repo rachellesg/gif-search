@@ -25,8 +25,8 @@ function App() {
   return (
     <>
       <div className="header">
-        <h1>Simple GIPHY search</h1>
-        Key in your search term and be presented with GIFs!
+        <h1>Search for your favourite GIFs!</h1>
+        Just key in your search term and press E N T E R
       </div>
       <div className="container">
         <SearchBar setSearchData={setSearchData} />
@@ -35,7 +35,8 @@ function App() {
           {searchResults &&
             searchResults.map((item, index) => (
               <div key={index} className="image">
-                <img alt={item.title} src={item.images.downsized.url} />
+                <img alt={item.title} src={item.images.downsized.url} /> <br />
+                {item.title}
               </div>
             ))}
         </div>
